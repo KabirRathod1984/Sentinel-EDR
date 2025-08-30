@@ -67,13 +67,13 @@ sudo apt install python3-flask-cors -y
 ### 1. Start the Server
 ```bash
 python3 server.py
-# and just visit http://<local-host/IP>:8000
 ```
+**and just visit http://<local-host/IP>:8000**
 ### 2. Run the Agent
 ```bash
 python3 agent.py --server http://<server-ip>:8000 --agent <machine-name> --key <api-key>
-# make sure api key match with server-side sccript.
 ```
+⚠️ ** make sure api key match with server-side sccript.**
 ---
 
 ## 🔧 Customization – Adding Your Own Detection Rules  
