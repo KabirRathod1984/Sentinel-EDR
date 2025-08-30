@@ -29,15 +29,15 @@ The server provides a **real-time dashboard** with severity-based color-coded al
 
 ---
 
-### 🛠️ Installation
+## 🛠️ Installation
 
-## 1. Clone the repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/Sentinel-EDR.git
 cd Sentinel-EDR
 ```
 
-## 💻 2. Requirements
+### 💻 2. Requirements
 ```bash
 # Make sure pip is updated
 python3 -m pip install --upgrade pip
@@ -62,14 +62,14 @@ pip install flask_cors
 sudo apt install python3-flask-cors -y
 ```
 
-### 📡 Usage
+## 📡 Usage
 
-## 1. Start the Server
+### 1. Start the Server
 ```bash
 python3 server.py
 # and just visit http://<local-host/IP>:8000
 ```
-## 2. Run the Agent
+### 2. Run the Agent
 ```bash
 python3 agent.py --server http://<server-ip>:8000 --agent <machine-name> --key <api-key>
 # make sure api key match with server-side sccript.
