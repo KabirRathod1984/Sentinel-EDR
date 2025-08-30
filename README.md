@@ -37,7 +37,7 @@ git clone https://github.com/yourusername/Sentinel-EDR.git
 cd Sentinel-EDR
 ```
 
-### 💻 2. Requirements
+### 2. Requirements
 ```bash
 # Make sure pip is updated
 python3 -m pip install --upgrade pip
