@@ -74,6 +74,8 @@ python3 server.py
 python3 agent.py --server http://<server-ip>:8000 --agent <machine-name> --key <api-key>
 ```
 ⚠️ ** make sure api key match with server-side sccript.**
+
+
 ---
 
 ## 🔧 Customization – Adding Your Own Detection Rules  
