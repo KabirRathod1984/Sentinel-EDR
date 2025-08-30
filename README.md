@@ -74,5 +74,42 @@ python3 server.py
 python3 agent.py --server http://<server-ip>:8000 --agent <machine-name> --key <api-key>
 # make sure api key match with server-side sccript.
 ```
+---
 
+## 🔧 Customization – Adding Your Own Detection Rules  
 
+One of the strengths of **Sentinel-EDR** is flexibility.  
+You can easily extend or modify the **suspicious activity detection rules** in the **agent script**.  
+
+### 📌 Where are the rules defined?  
+- Rules are stored inside the `rules` dictionary in **`agent.py`**.  
+- Each rule has three key parts:  
+  - **description** → human-readable explanation of the suspicious activity.  
+  - **severity** → `Low`, `Medium`, `High`, or `Critical`.  
+  - **condition** → Python logic that checks process names, file paths, or network activity.  
+
+### 📝 Example Rule  
+```python
+rules = {
+    "rule1": {
+        "description": "Execution of PowerShell from Downloads folder",
+        "severity": "High",
+        "condition": lambda event: event["process"] == "powershell.exe" and "Downloads" in event["path"]
+    },
+    "rule2": {
+        "description": "Suspicious outbound connection from Microsoft Word",
+        "severity": "Critical",
+        "condition": lambda event: event["process"] == "WINWORD.EXE" and event["destination_port"] not in [80, 443]
+    }
+}
+```
+### ✨ How to add your own rules
+
+- Open agent.py in a text editor.
+- Find the rules section.
+- Copy an existing rule and adjust the logic (change process name, file path, or ports).
+- Restart the agent with:
+```bash
+python3 agent.py --server http://<server-ip>:8000 --agent mypc --key <api-key>
+```
+- ✅ Your new rules will automatically take effect and trigger alerts on the server dashboard.
