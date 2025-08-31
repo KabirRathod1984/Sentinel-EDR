@@ -33,7 +33,7 @@ The server provides a **real-time dashboard** with severity-based color-coded al
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/Sentinel-EDR.git
+git clone https://github.com/KabirRathod1984/Sentinel-EDR.git
 cd Sentinel-EDR
 ```
 
